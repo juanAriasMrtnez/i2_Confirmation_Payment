@@ -122,8 +122,17 @@
               "devServerTarget": "pay-con:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@netlify-builder/deploy:deploy",
+          "options": {
+            "outputPath": "dist/pay-con",
+            "netlifyToken": "0a9cdf4f479a0b74fa61ecef68e65af1fd478cb2df662ce5da9d2bdbae5e603e",
+            "siteId": "    50d67a67-688f-4d91-9036-5d77209242ef"
+          }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "pay-con"
 }
