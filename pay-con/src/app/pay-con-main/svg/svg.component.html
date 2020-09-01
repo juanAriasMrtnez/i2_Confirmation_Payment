@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+[attr.status]="state" [attr.icon-size]="name">
+    <use [attr.xlink:href]="absUrl + '#' + name" class="i2-icon"></use>
+    <use [attr.xlink:href]="absUrl + '#circle'" *ngIf="state" class="circle"></use>
+    <use [attr.xlink:href]="absUrl + '#circle-icon-a'" *ngIf="state && state === 'reserved'"></use>
+    <use [attr.xlink:href]="absUrl + '#circle-icon-b'" *ngIf="state && state !== 'reserved'"></use>
+</svg>

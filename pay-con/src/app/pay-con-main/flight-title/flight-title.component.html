@@ -1,0 +1,34 @@
+<section class="container yf-title pt-4">
+    <pay-beeper [flight]="flightNumber"
+        [beeper]="beeperId"
+        [operator]="op"
+        [goTo]="toCity"
+    ></pay-beeper>
+    <div class="row align-items-center position-relative yf-flight__row">
+        <pay-my-flight class="col-auto"
+            [iataCode]="from"
+            [airport]="fromCity"
+            [takeOff]="fromDate">
+        </pay-my-flight>
+        <div class="col-auto yf-flight_ow-icon flex-shrink-0">
+            <pay-svg name="ow-plane"></pay-svg>
+        </div>
+        <pay-my-flight class="col-auto"
+            [iataCode]="to"
+            [airport]="toCity"
+            [takeOff]="toDate">
+        </pay-my-flight>
+        <div class="col yf-flight_ancillaries flex-shrink-1">
+            <div *ngIf="fare" class="fare"><div>Tarifa</div>{{ fare }}</div>
+            <a href="#" data-toggle="tooltip" title="Asiento no incluido">
+                <pay-svg name="seat" state="initial"></pay-svg>
+            </a>
+            <a href="#" data-toggle="tooltip" title="Maleta no incluida">
+                <pay-svg name="suitcase" state="reserved"></pay-svg>
+            </a>
+            <a href="#" data-toggle="tooltip" title="Prioridad no incluida">
+                <pay-svg name="priority" state="in-alert"></pay-svg>
+            </a>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,102 @@
+@import '../../../assets/scss/var.scss';
+
+:host {
+    margin-top: 1.5rem;
+    .yf-flight__row {
+        flex-wrap: nowrap;
+    }
+    span {
+        font-size: 14px;
+        line-height: 14px;
+        white-space: nowrap;
+        @media (max-width: $mobile) {
+            font-size: 12px;
+        }
+    }
+    .yf-flight_pnr {
+        text-transform: uppercase;
+        font-size: 16px;
+        @media (max-width: $mobile) {
+            font-size: 13px;
+        }
+    }
+    .yf-flight_favicon {
+        display: inline-block;
+        width: 19px;
+        height: 22px;
+        transform: translateY(-1px);
+    }
+    .yf-flight_ow-icon, .yf-flight_rt-icon {
+        width: 40px;
+        height: 33px;
+        margin: 10px 20px 0 20px;
+        padding: 0;
+        pay-svg {
+            width: 100%;
+            height: 100%;
+            fill: $i2-red-color;
+        }
+        @media (max-width: $desktop) {
+            margin: 10px 5px 0 5px;
+        }
+        @media (max-width: $desktop-s) {
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            top: 22px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+    .yf-flight_rt-icon {
+        background-position: 37px 54px;
+    }
+
+    @media (max-width: $mobile) {
+        .row {
+            flex-wrap: nowrap;
+        }
+    }
+
+    .yf-flight_ancillaries {
+        margin-top: 5px;
+        text-align: right;
+        white-space: nowrap;
+        
+        pay-svg {
+            width: 44px;
+            height: 37px;
+            display: inline-block;
+        }
+        a, .fare {
+            display: inline-table;
+            margin: 0 2px;
+        }
+        .fare {
+            text-transform: uppercase;
+            font-size: .95rem;
+            line-height: 1.05rem;
+            vertical-align: middle;
+            margin-right: .5rem;
+            color: $text-color-semi;
+        }
+        pay-svg[name="priority"], pay-svg[name="seat"] {
+            width: 40px;
+        }
+        pay-svg[name="seat"] {
+            height: 44px;
+            transform: translateY(3px);
+        }
+        @media (max-width: $desktop) {
+            transform: scale(.9);
+        }
+        @media (max-width: $desktop-s) {
+            display: none;
+        }
+    }
+}
+@media (max-width: $desktop-s) {
+    .flight-detail-buttons {
+        margin-top: 0px;
+    }
+}

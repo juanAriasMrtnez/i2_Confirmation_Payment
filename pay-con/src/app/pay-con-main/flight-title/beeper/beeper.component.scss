@@ -1,0 +1,68 @@
+@import '../../../../assets/scss/mixins.scss';
+
+:host {
+    margin-top: 40px;
+    pay-svg {
+        width: 20px;
+        height: 20px;
+        display: inline-block;
+        margin-right: 4px;
+        fill: $i2-red-color;
+        transform: translateY(-1.5px);
+        @media (max-width: $mobile)  {
+            width: 16px;
+            margin-right: 2px;
+            transform: translateY(-1px);
+        }
+    }
+    .yf-beeper {
+        display: inline-block;
+        vertical-align: middle;
+        width: calc(100% - 32px);
+        font-size: 1.4rem;
+        line-height: 1.2rem;
+        margin: 0 0 .25rem .25rem;
+        span {
+            font-size: 1.2rem;
+            display: inline-block;
+        }
+        @media (max-width: $mobile) {
+            font-size: 1rem;
+            margin: 0 0 .15rem .25rem;
+            line-height: 1.1rem;
+            span {
+                font-size: .85rem;
+            }
+        }
+    }
+    .yf-flight_favicon {
+        margin-left: .5rem;
+    }
+    .yf_flight_airline {
+        line-height: 1.25rem;
+        @media (max-width: $mobile) {
+            font-size: .85rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: calc(100% - 110px);
+            display: inline-block;
+            // transform: translateY(4px);
+            line-height: .85rem;
+            // margin-top: 4px;
+        }
+    }
+    .border-below {
+        @include border-below;
+        margin-bottom: 6px;
+        @media (max-width: $mobile) {
+            margin-bottom: 0;
+        }
+    }
+    .yf_alert {
+        display: none;
+    }
+    .passenger-add-contact {
+        display: none;
+    }
+}

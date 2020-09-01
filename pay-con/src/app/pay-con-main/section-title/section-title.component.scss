@@ -1,0 +1,42 @@
+:host {
+    & > .container {
+        margin-top: 2rem;
+    }
+}
+@import '../../../assets/scss/mixins.scss';
+
+.border-below {
+    @include border-below;
+}
+.wd {
+    margin-bottom: 10px;
+}
+.row {
+    align-items: flex-start;
+}
+button {
+    display: inline-block;
+    background: none;
+    outline: none;
+    padding: 0;
+    border: none;
+    pay-svg {
+        max-width: 24px;
+        max-height: 24px;
+        display: block;
+        fill: $i2-red-color;
+    }
+    &:hover {
+        pay-svg {
+            fill: $i2-red-darken;
+        }
+    }
+    &:focus {
+        box-shadow: none;
+        background: none;
+        border: none;
+        pay-svg {
+            fill: $i2-red-darken;
+        }
+    }
+}

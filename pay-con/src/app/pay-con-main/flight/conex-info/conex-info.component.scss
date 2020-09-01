@@ -1,0 +1,65 @@
+@import '../../../../assets/scss/var.scss';
+
+.fd-conex {
+    margin: 16px auto 20px auto;
+    .fd-conex_title {
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+    .fd-conex_line {
+        height: 1px;
+        background: $border-color;
+        margin-right: 15px;
+    }
+    .separator {
+        margin: 0 .25rem;
+    }
+    .fd-conex_time {
+        padding: 0;
+        .fd-ct-content {
+            margin: 0 15px;
+            color: $text-color-semi;
+        }
+        .fd-ct-line {
+            width: 15px;
+            margin-top: 12px;
+            height: 1px;
+            background: $border-color;
+        }
+    }
+    @media (max-width: $desktop) {
+        white-space: nowrap;
+        span.fd-c-time {
+            display: inline-block;
+            vertical-align: middle;
+            max-width: 150px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+    }
+    @media (max-width: $desktop-s) {
+        .fd-conex_title {
+            text-align: center;
+            flex-basis: 100%;
+        }
+        .fd-conex_line {
+            display: none;
+        }
+        pay-conex-detail {
+            width: 100%;
+        }
+        .fd-conex_time {
+            margin: 7px 0;
+            flex-basis: 100%;
+            text-align: center;
+            .fd-ct-line {
+                flex-basis: calc(50% - 80px);
+            }
+        }
+    }
+    @media (max-width: $mobile) {
+        .fd-conex_time {
+            font-size: 15px;
+        }
+    }
+}

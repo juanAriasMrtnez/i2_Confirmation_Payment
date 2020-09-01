@@ -1,0 +1,33 @@
+<div class="container fd-conex">
+    <div class="row align-items-center">
+        <div class="col fd-conex_title col-md-auto">VUELO EN CONEXIÓN</div>
+        <div class="col fd-conex_line"></div>
+    </div>
+    <div class="row">
+        <pay-conex-detail
+            operator="Iberia Express"
+            flight="I22320"
+            origin="Madrid"
+            originTime="10:30"
+            destination="Santiago de Compostela"
+            destinationTime="12:40">
+        </pay-conex-detail>
+        <div class="col col-md-auto fd-conex_time d-flex justify-content-center">
+            <div class="fd-ct-line"></div>
+            <div class="fd-ct-content">
+                <span class="fd-ct-text">Escala</span>
+                <span class="separator">-</span>
+                <span class="fd-ct-time">1h 30m</span>
+            </div>
+            <div class="fd-ct-line"></div>
+        </div>
+        <pay-conex-detail
+            operator="Iberia Express"
+            flight="I24860"
+            origin="Santiago de Compostela"
+            originTime="8:30"
+            destination="Madrid"
+            destinationTime="11:20">
+        </pay-conex-detail>
+    </div>
+</div>

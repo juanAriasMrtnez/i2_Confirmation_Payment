@@ -1,0 +1,16 @@
+<div [class.container]="location !== 'interior'">
+    <div class="row border-below text-uppercase" [class.wd]="description" *ngIf="!emergency">
+        <h4 class="col">
+            {{ title }}
+        </h4>
+    </div>
+    <div class="row border-below text-uppercase" [class.wd]="description" *ngIf="emergency">
+        <div class="col-auto"><h4>{{ title }}</h4></div>
+        <button class="icon-add col-auto"><pay-svg name="icon-add"></pay-svg></button>
+    </div>
+    <div class="row" *ngIf="description">
+        <div class="col">
+            {{ description }}
+        </div>
+    </div>
+</div>

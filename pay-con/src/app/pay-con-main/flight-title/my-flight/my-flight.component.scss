@@ -1,0 +1,63 @@
+@import '../../../../assets/scss/var.scss';
+
+:host {
+    font-size: 52px;
+    font-weight: 500;
+    text-transform: uppercase;
+    white-space: nowrap;
+    
+    .yf_destination {
+        display: inline-block;
+        vertical-align: middle;
+        line-height: 0;
+    }
+    &:nth-child(1) {
+        flex-grow: 0;
+    }
+    @media (max-width: $desktop-s) {
+        text-align: center;
+        font-size: 42px;
+        display: block;
+        flex-basis: 50%;
+        flex-shrink: 0; 
+        max-width: 50%;
+    }
+    .yf-flight_terminal {
+        white-space: nowrap;
+        text-transform: uppercase;
+        display: inline-block;
+        vertical-align: middle;
+        padding-left: .25rem;
+        line-height: 20px;
+        font-size: 20px;
+        text-align: left;
+        margin-top: 2px;
+        .yf-ft_city {
+            flex-basis: 250px;
+            max-width: 250px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+        .yf-ft_date {
+            font-size: 15px;
+            color: $i2-red-color;
+        }
+        @media (max-width: $desktop) {
+            .yf-ft_city {
+                flex-basis: 205px;
+                max-width: 205px;
+            }
+        }
+        @media (max-width: $desktop-s) {
+            display: block;
+            text-align: center;
+            margin-bottom: 12.5px;
+            margin-top: 0;
+            .yf-ft_city {
+                flex-basis: 100%;
+                font-size: 18px;
+                max-width: 100%;
+            }
+        }
+    }
+}

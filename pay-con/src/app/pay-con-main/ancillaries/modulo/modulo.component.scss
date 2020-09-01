@@ -1,0 +1,137 @@
+@import '../../../../assets/scss/var.scss';
+
+.ancillary-section {
+    margin: 15px auto;
+}
+
+.i2-modulo.align-items-center.row {
+    border-bottom: transparent;
+}
+.i2-modulo.align-items-center.row {
+    border-bottom: $border-color;
+}
+.i2-modulo.align-items-center.row {
+    border-bottom-color: $border-color;
+    border-bottom: 1px solid $border-color;
+}
+.i2-modulo {
+    border:1px solid $border-color;
+    border-left: 4px solid $i2-red-color;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: 0;
+    margin-right: 0;
+
+    & + .container-collapse {
+        border: 1px solid $border-color;
+        border-top: 0px;
+        padding: 1px 30px;
+        
+        @media (max-width:$tablet) {
+            padding: 1px 20px;
+        }
+    }
+
+    .icono-modulo {
+        padding: 0 5px 0 15px;
+        text-align: center;
+        pay-svg {
+            display: block;
+            max-width: 60px;
+            max-height: 60px;
+            width: 52px;
+            height: 55px;
+            fill: $i2-red-color;
+        }
+        pay-svg[ng-reflect-name="priority"] {
+            height: 50px;
+            width: 50px;
+        }
+        pay-svg[ng-reflect-name="seat"] {
+            margin-top: 8px;
+        }
+    }
+}
+
+.ancillaries-complete {
+    .i2-modulo,  .i2-modulo + .container-collapse {
+        border-color: $i2-green-color;
+        position: relative;
+
+        
+    }
+    .icono-modulo {
+        padding: 0 5px 0 15px;
+        text-align: center;
+        pay-svg {
+            display: block;
+            max-width: 60px;
+            max-height: 60px;
+            width: 52px;
+            height: 55px;
+            fill: $i2-green-color;
+            path {
+                fill: $i2-green-color;
+            }
+        }
+        pay-svg[ng-reflect-name="priority"] {
+            height: 50px;
+            width: 50px;
+        }
+        pay-svg[ng-reflect-name="seat"] {
+            margin-top: 8px;
+        }
+    }
+    
+    .icono-modulo svg {
+        fill: $i2-green-color;
+    }
+    .icono-modulo svg {
+        fill: $i2-green-color;
+        .b, .a {
+            fill: $i2-green-color;
+        }
+    }
+    .i2-modulo.align-items-center.row {
+        border-color: $i2-green-color;
+        border-bottom: 1px solid $i2-green-color;
+    }
+    .i2-modulo {
+        cursor: auto;
+        border-bottom: 0px;
+        button.btn-primario {
+            display: block;
+        }
+        .complete-check {
+            display: block;
+            position: absolute;
+            right: 0;
+            top: -7px;
+            height: 15px; 
+            width: 15px;
+            fill: $i2-green-color;
+        }
+    }
+}
+.i2-modulo {
+    button.btn-primario {
+        display: block;
+        // pointer-events: none;
+        cursor: auto;
+    }
+}
+
+form {
+    display: inline-block;
+    button {
+        background: none;
+        border: none;
+        outline: none;
+        &:focus {
+            box-shadow: none!important;
+        }
+        svg.facebook-icon {
+            height: 40px; //Tenía valor 35
+        }
+    }
+}

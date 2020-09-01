@@ -1,0 +1,624 @@
+@import 'assets/scss/var.scss';
+
+body {
+    overflow-x: hidden;
+    margin-bottom: 50px;
+}
+
+html, body, h1, h2, h3, h4 {
+    font-family: Dosis, sans-serif;
+}
+
+a {
+    color: inherit;
+    transition: $i2-transition;
+    text-decoration: underline;
+    &:hover {
+        color: $i2-red-color;
+    }
+}
+
+h3 {
+    font-weight: 400;
+    color: $text-color-dark;
+    @media (max-width: $tablet) {
+        font-size: 1.5rem;
+    }
+}
+
+
+
+button.btn-primary {
+    display: inline-block;
+    background-color: $i2-red-color;
+    border-color: $i2-red-color;
+    height: auto;
+    padding: 0.75rem 0.75rem 0.65rem 0.75rem;
+    line-height: 1.1rem;
+    min-width: 100px;
+    &:hover {
+        background-color: $i2-red-darken;
+        border-color: $i2-red-darken;
+    }
+    &:focus, &:active {
+        background-color: $i2-red-darken!important;
+        border-color: $i2-red-darken!important;
+        outline: none!important;
+        color: white;
+        box-shadow: none!important;
+    }
+    &:disabled {
+        background-color: $i2-red-color;
+        border-color: $i2-red-color!important;
+        color: white;
+        opacity: 0.5;
+        &:hover, &:active, &:focus {
+            background-color: $i2-red-color;
+            border-color: $i2-red-color;
+            opacity: 0.5;
+        }
+    }
+}
+
+button.btn-primario {
+    display: inline-block;
+    background-color: $i2-red-color;
+    color: white;
+    border-color: $i2-red-color;
+    height: auto;
+    padding: .75rem;
+    line-height: 1.1rem;
+    @media (max-width: $desktop) {
+        font-size: 12px;
+        line-height: 1rem;
+    }
+    &:hover, &:focus {
+        background-color: $i2-red-darken;
+        color: white;
+        border-color: $i2-red-darken;
+        box-shadow: none!important;
+    }
+}
+
+button.btn-secundario {
+    display: inline-block;
+    background-color: white;
+    color: $i2-red-color;
+    border-color: $i2-red-color;
+    height: auto;
+    line-height: 1.1rem;
+    padding: 0.65rem 0.75rem;
+
+    &:hover, &:focus {
+        background-color: white;
+        color:  $i2-red-darken;
+        border-color:  $i2-red-darken;
+        box-shadow: none!important;
+    }
+}
+button.btn-secundario.fw {
+    padding: 0.5rem 0.75rem;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+//Information button
+.i2-information, .i2-modal-information {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    top: 1px;
+    width: 22px;
+    max-width: 22px;
+    height: 22px;
+    border: 1px solid $i2-red-color;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: border-color 0.25s ease-in;
+
+    &:hover {
+      border-color: $i2-red-darken;
+      span {
+        background: $i2-red-darken;
+      }
+    }
+
+    span {
+      content: "";
+      background: $i2-red-color;
+      position: absolute;
+      -webkit-transition: width 0.25s ease-in-out, height 0.25s ease-in-out, top 0.2s;
+      transition: all 0.25 ease-in-out;
+
+      &:nth-child(1) {
+        transform: translateX(-50%);
+        left: 50%;
+        border-radius: 50%;
+        width: 2px;
+        height: 2px;
+        top: 4px;
+      }
+      &:nth-child(2) {
+        transform: translateX(-50%);
+        left: 50%;
+        top: 8px;
+        width: 1px;
+        height: 9px;
+        border-radius: 2px;
+      }
+    }
+    @media (max-width: $tablet) {
+      margin-right: 12.5px!important;
+    }
+    @media (min-width: $tablet) {
+        // top: -3px;
+    }
+}
+
+.is-clicked {
+    span {
+        &:nth-child(1) {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(45deg);
+        width: 1px;
+        height: 15px;
+        border-radius: 2px;
+        }
+        &:nth-child(2) {
+        top: 50%;
+        left: 50%;
+        width: 1px;
+        height: 15px;
+        transform: translate(-50%, -50%) rotate(-45deg);
+        }
+    }
+}
+
+.i2-dialog {
+    padding: 11px 10px 0 15px;
+    border: 1px solid $i2-red-color;
+    background: #ffffff;
+    border-radius: 10px;
+    position: absolute;
+    left: -116px;
+    bottom: -25px;
+    width: 342px;
+    white-space: normal;
+    transform: scale(0);
+    opacity: 0;
+    transition: $i2-transition;
+    -webkit-transition: all 0.25s ease;
+    &:before {
+        content: "";
+        border: 1px solid $i2-red-color;
+        border-top: none;
+        background: #ffffff;
+        border-right: none;
+        width: 15px;
+        height: 15px;
+        display: block;
+        position: absolute;
+        transform: rotate(-45deg);
+        bottom: -8px;
+        left: 57.5px;
+    }
+    p {
+        font-size: .9rem;
+        line-height: 1.25rem;
+        margin-bottom: 12px;
+    }
+    @media (max-width: $tablet) {
+        left: -245px!important;
+        width: 310px;
+        &:before {
+        left: 247px;
+        }
+    }
+    @media (max-width: $mobile) {
+        left: -280px!important;
+        &:before {
+        left: 282px;
+        }
+    }
+}
+
+.d-in {
+    transform: scale(1);
+    bottom: 40px;
+    left: -56px;
+    opacity: 1;
+}
+
+// ICONOS UNICODE
+.i2-arrow-right::after {
+    content: "\2192";
+    margin: 0px 10px;
+    color: $i2-green-color;
+    @media (max-width: $mobile) {
+        margin: 0px 5px;
+    }
+}
+.i2-arrow-left::after {
+    content: "\2190";
+    margin: 0px 10px;
+    color: $i2-green-color;
+    font-size: inherit;
+}
+.i2-x::after {
+    content: "\2715";
+    color: $i2-red-color;
+    font-size: 1.4em;
+}
+.i2-v::after {
+    content: "\2714";
+    color: $i2-green-color;
+    font-size: .8em;
+}
+.i2-angle-up-bracket::after {
+    content: "\FE3F";
+    transform: rotate(-180);
+}
+.i2-dupdo::after {
+    content:"\2329";
+    color: $text-color-semi;
+}
+.i2-angle-down-bracket::after {
+    content: "\FE40";
+    transform: rotate(90);
+}
+
+.span-validation {
+    padding-left:10px;
+    display: block;
+    line-height: 1.2rem;
+    padding-top: 5px;
+    color: $i2-red-color;
+    &.validated{
+      display: none; // ELIMINAR SI SE USA NG-IF PARA VALIDAR
+    }
+}
+.find-your-flight {
+    .span-validation {
+       @media ( min-width:$tablet) {
+           position:absolute;
+       }
+    }
+}
+
+/* Overwriting Bootstrap 4 */
+
+.i2-gutter-col {
+    padding-left: 7.5px;
+    padding-right: 7.5px;
+}
+
+input, button, .form-control {
+    &:focus {
+        box-shadow: none;
+        border-color: inherit;
+    }
+}
+
+input {
+    &:focus {
+        border-color: $text-color-semi;
+    }
+    &:focus::-webkit-input-placeholder {
+        opacity: .4;
+    }
+    &:focus::-ms-input-placeholder {
+        opacity: .4;
+    }
+    &:focus::-moz-input-placeholder {
+        opacity: .4;
+    }
+}
+
+.btn-inline {
+    width: calc(100% - 40px);
+    display: inline-block;
+    background-color: $i2-red-color;
+    color: white;
+    margin-left: 7.5px;
+    &:hover {
+        background-color: $i2-red-darken;
+    }
+}
+.no-wrap {
+    white-space: nowrap;
+}
+.left-inline {
+    margin-left: 0px;
+    margin-right: 3px;
+    width: calc(100% - 46px);
+}
+.custom-control-input:checked ~ .custom-control-label::before {
+    border-color: $i2-green-color;
+    background-color: $i2-green-color !important;
+}
+
+.table thead th, .table td, .table th {
+    vertical-align: middle;
+}
+
+.i2-table {
+    .custom-switch .custom-control-input:disabled:checked ~ .custom-control-label {
+        &::before {
+            border-color: $border-color;
+            background-color: #ffffff !important;
+        }
+        &::after {
+            border-color: $border-color;
+        }
+    }
+    .custom-switch {
+        padding-left: 1.5rem;
+
+        .custom-control.label {
+            margin-left: 1.3rem;
+        }
+    }
+}
+
+.tooltip-inner {
+    color: $text-color-semi;
+    background-color: rgba(255, 255, 255, 1);
+    border: 1px solid $i2-red-color;
+    line-height: 16px;
+    padding: 10px 13px;
+    font-family: Dosis, sans-serif;
+}
+
+.tooltip.show {
+    opacity: 1;
+}
+
+.tooltip.bs-tooltip-top .arrow:before, .tooltip.bs-tooltip-bottom .arrow:before {
+    background-color: white;
+    border: 1px solid $i2-red-color;
+    width: 10px;
+    height: 10px;
+    top: -5px;
+    transform: rotate(45deg);
+    border-top: none;
+    border-left: none;
+}
+.tooltip.bs-tooltip-bottom .arrow:before {
+    top: 2px;
+    transform: rotate(-135deg);
+}
+
+.container-vuelta-row {
+    .tab-content {
+        padding: 0px;
+    }
+}
+
+input[type="radio"] {
+    &:checked + label::before {
+        background-color: $i2-green-color!important;
+        border-color: $i2-green-color!important;
+        box-shadow: none!important;
+    }
+    &+label::before {
+        margin-top: 3px;
+    }
+    &+label::after {
+        margin-top: 3px;
+    }
+}
+input:disabled, select:disabled {
+    background: rgba(250, 250, 250, 0.6) !important;
+}
+
+nav a.nav-link {
+    text-decoration: none;
+}
+
+button.preloader[disabled] {
+    border-color: $i2-red-color!important;
+    background-color: $i2-red-color!important;
+    opacity: .6;
+}
+
+.spinner-border {
+    width: 1rem;
+    height: 1rem;
+    border: 0.1rem solid currentColor;
+    border-right: transparent;
+    border-radius: 50%;
+}
+
+.btn .spinner-border {
+    border-color: white;
+}
+.custom-switch .custom-control-input:disabled:checked:disabled ~ .custom-control-label::before {
+    background: #ffffff;
+}
+.cki-passengers .custom-switch .custom-control-input:checked:disabled + label::after {
+    opacity: 0.5;
+}
+
+button.form-control:disabled {
+    background-color: #d7192d;
+    opacity: .5;
+}
+
+// MODALES
+
+.i2-modal {
+    .modal-content {
+        padding:  0px 20px 20px 20px;
+        border:1px solid $i2-red-color;
+
+        .i2-modal-texto {
+            padding-left: 0px;
+            @media (max-width:$mobile) {
+                padding-left: 10px;
+            }
+        }
+        .modal-header {
+            border-bottom: none;
+            padding-bottom: 0px;
+        }
+        .modal-body {
+            padding-top: 10px;
+        }
+    }
+    svg.icon-modal {
+        max-height: 50px;
+        width: 60px;
+        margin: 20px;
+        fill: $i2-red-color;
+        .b, .a {
+            fill: $i2-red-color;
+        }
+        @media (max-width:$mobile) {
+            margin-left: 15%;
+            min-width: 40px;
+            max-width: 60px;
+        }
+    }
+    button {
+        margin-top: 10px;
+        outline: none;
+    }
+    button.i2-close {
+        margin-right: -10px;
+        outline: none;
+        font-size: 1rem;
+        opacity: 1;
+
+        .i2-x::after {
+            color:$i2-red-color;
+        }
+    }
+    button.i2-close:hover {
+        .i2-x::after {
+            color:$i2-red-darken;
+        }
+    }
+    .boarding-pass-row {
+        @media (max-width: $tablet) {
+            .col {
+                flex-basis: 100%;
+            }
+        }
+        button{
+            margin: 0px;
+        }
+    }
+    .button-row {
+        margin-top: 20px;
+        margin-bottom: 20px;
+
+        svg {
+            height: 21px;
+            margin: -4px 5px 0px 0px;
+            width: 21px;
+            margin-top: -4px;
+            path {
+                fill: $i2-red-color;
+            }
+        }
+
+        .col:first-child {
+            @media (min-width:$tablet) {
+                padding-left: 0px;
+            }
+            @media (max-width:$tablet) {
+                padding-left: 0px;
+                padding-right: 0px;
+                padding-bottom: 10px;
+            }
+        }
+        .col:last-child {
+            @media (min-width:$tablet) {
+                padding-right: 0px;
+            }
+            @media (max-width:$tablet) {
+                padding-left: 0px;
+                padding-right: 0px;
+            }
+        }
+    }
+    .button-row:last-child {
+        margin-top: 20px;
+        margin-bottom: 0px;
+    }
+
+    .boardingpass-name {
+        @media (max-width:$mobile) {
+            width:100% !important;
+            margin-bottom: 5px;
+        }
+    }
+    &.boarding-cki-download {
+        .modal-header .close {
+            padding: .5rem;
+            margin-right: -30px;
+        }
+        .row {
+            margin-bottom: 10px;
+        }
+    }
+}
+
+
+.passenger-add-contact {
+    padding-left: 0px;
+    @media (max-width:$tablet) {
+        font-size:1rem;
+    }
+    a  {
+        font-weight: bold;
+        color: $i2-red-color;
+        font-size: 1rem;
+        white-space: nowrap;
+
+        @media (max-width:$tablet) {
+            font-size:1rem;
+        }
+
+        margin-top: 20px;
+        svg.icon-add{
+            height: 20px;
+            width: 20px;
+            margin-left: 5px;
+            path {
+                fill: $i2-red-color;
+            }
+        }
+        &:hover {
+            color: #a80e1f;
+            svg.icon-add path {
+                fill: #a80e1f;
+            }
+        }
+    }
+    span {
+        font-weight: bold;
+        color: $text-color-dark;
+        font-size: 1rem;
+        margin-top: 0px;
+        svg.icon-add{
+            height: 20px;
+            width: 20px;
+            margin-left: 5px;
+            path {
+                fill: $i2-red-color;
+            }
+        }
+    }
+    button.svg-button {
+        outline: none;
+        border: none;
+        background: transparent;
+        width: auto;
+        padding: 0px;
+    }
+}
+
+@import 'assets/scss/share.scss';
+

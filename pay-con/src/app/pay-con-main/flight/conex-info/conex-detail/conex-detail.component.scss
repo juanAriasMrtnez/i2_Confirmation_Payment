@@ -1,0 +1,83 @@
+@import '../../../../../assets/scss/var.scss';
+
+.fd-conex_ow {
+    .fd-c-ow {
+        margin-right: .25rem;
+        @media (max-width: 400px) {
+            max-width: 80px;
+            overflow: hidden;
+            display: inline-block;
+            vertical-align: top;
+            text-overflow: ellipsis;
+        }
+        @media (max-width: 330px) {
+            max-width: 75px;
+        }
+    }
+    .separator {
+        margin: 0 .25rem;
+    }
+    .fd-c-time {
+        color: $i2-red-color;
+    }
+    .fd-c-airline {
+        color: $text-color-semi;
+    }
+    .yf-flight_favicon {
+        display: inline-block;
+        width: 19px;
+        height: 22px;
+        transform: translateY(-1px);
+        pay-svg {
+            width: 100%;
+            height: 100%;
+        }
+        .airline-op {
+            display: none;
+        }
+        .is-this-airline {
+            display: inline-block;
+        }
+    }
+}
+@media (max-width: $desktop-s) {
+    .fd-conex_ow {
+        flex-basis: 100%;
+        text-align: center;
+        span.fd-c-ow {
+            max-width: 160px;
+        }
+    }
+}
+@media (max-width: $mobile) {
+    .fd-conex_ow {
+        font-size: 15px;
+        span.fd-c-ow {
+            max-width: 140px;
+        }
+    }
+}
+@media (max-width: 390px) {
+    .fd-conex_ow {
+        span.fd-c-ow {
+            max-width: 130px;
+        }
+    }
+}
+@media (max-width: 340px) {
+    .fd-conex_ow {
+        span.fd-c-ow {
+            max-width: 110px;
+        }
+    }
+}
+:host {
+    
+    width: 100%;
+    text-align: center;
+    padding-left: 15px;
+    @media (min-width:$desktop-s) {
+        width: auto;
+        text-align: left;
+    }
+}

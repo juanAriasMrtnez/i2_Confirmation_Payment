@@ -1,0 +1,32 @@
+@import '../../../assets/scss/var.scss';
+
+svg path {
+    fill: $i2-red-color;
+}
+h4 {
+    color: $i2-red-color;
+    text-align: center;
+    margin-top: 1rem;
+    @media (min-width: $desktop-s){
+        margin-top: 10%;
+    }
+    
+}
+
+span.pnr {
+    font-weight: bolder;
+    font-size: 1.1rem;
+    padding-right: 1rem;
+    padding-left: .5rem;
+}
+#check_verde {
+    width: 15px;
+    margin-right: 5px;
+    margin-top: -3px;
+}
+
+#share {
+    width: 15px;
+    margin-right: 5px;
+    margin-top: -3px;
+}
