@@ -39,158 +39,26 @@ section {
             margin-right: 10px;
         }
         
-        .ancillarie-tablet {
-            position: absolute;
-            top: -1px;
-            opacity: 0;
-            left: -1px;
-            width: 67.5%;
-            max-height: 116px;
-            transition: all .3s ease-in-out;
-            z-index: 2;
-            .a {
-                fill: white;
-            }
-            .b {
-                fill: $i2-red-color;
-            }
-            .c {
-                fill: #333;
-            }
-            @media (max-width: $desktop) {
-                width: 75%;  
-                max-height: 108px;          
-            }
-            @media (max-width: $desktop-s) {
-                width: 92%;   
-                max-height: 97px;      
-            }
-        }
-        .inner-border {
-            position: absolute;
-            width: calc(100% - 18px);
-            height: calc(100% - 18px);
-            border: 1px solid $i2-red-color;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-        }
-    
-        .ancillarie-text {
-            width: 55%;
-            height: 35%;
-            opacity: 0;
-            top: 5px;
-            z-index: 3;
-            left: -8px;
-            position: absolute;
-            color: $i2-red-color;
-            font-size: 30px;
-            text-transform: uppercase;
-            transition: all .4s ease-in-out;
-    
-            span {
-                position: absolute;
-                right: 20px;
-            }
-            .ar-ancillarie {
-                top: 10px;
-                right: 50px;
-                font-weight: 600;
-                transition: all .3s ease-in-out;
-                transform: scale(0.5);
-            }
-            .ar-price {
-                top: 0px;
-                font-size: 55px;
-                font-weight: 600;
-                left: 152px;
-                sub {
-                    font-size: 37px;
-                    bottom: 0px;
-                }
-            }
-            .ar-prop {
-                font-size: 16px;
-                font-weight: 300;
-                top: 42px;
-                right: 50px;
-                transition: all .5s ease-in-out;
-                transform: scale(0);
-            }
-            @media (max-width: $desktop) {
-                font-size: 25px;
-                .ar-ancillarie {
-                    top: 12px;
-                    right: 20px;
-                }
-                .ar-prop {
-                    right: 22px;
-                }
-                .ar-price {
-                    font-size: 52px;
-                }       
-            }
-            @media (max-width: $desktop-s) {
-                font-size: 22px;
-                .ar-ancillarie {
-                    top: 12px;
-                    right: -8px;
-    
-                }
-                .ar-prop {
-                    top: 38px;
-                    right: -6px;
-                }
-                .ar-price {
-                    font-size: 50px;
-                    left: 135px;
-                }       
-            }
-        }
         @media (max-width: $tablet) {
             flex-basis: 100%;
         }
     }
     
-    .ar-in-animation {
-        .ancillarie-tablet {
-            opacity: 1;
-        }
-        .ancillarie-text {
-            opacity: 1;
-            .ar-ancillarie {
-                transform: scale(1);
-            }
-            .ar-prop {
-                transform: scale(1);
-            }
-        }
-    }
     
     //Modificar urls en producción
     div[ancillaries="ceo"] {
         .ancillarie-image {
             background-image: url(../../../assets/img/desktop-ceo.jpg);
         }
-        .ancillarie-text, .ancillarie-tablet {
-            display: none;
-        }
     }
     div[ancillaries="activities"] {
         .ancillarie-image {
             background-image: url(../../../assets/img/activities.jpg);
         }
-        .ancillarie-text, .ancillarie-tablet  {
-            display: none;
-        }
     }
     div[ancillaries="coches"] {
         .ancillarie-image {
             background-image: url(../../../assets/img/coches.jpg);
-        }
-        .ancillarie-text, .ancillarie-tablet  {
-            display: none;
         }
     }
     div[ancillaries="seat"] {
@@ -206,29 +74,6 @@ section {
     div[ancillaries="priority"] {
         .ancillarie-image {
             background-image: url(../../../assets/img/priority-module.jpg);
-        }
-        .ancillarie-text {
-            .ar-ancillarie {
-                max-width: 140px;
-                white-space: normal;
-                font-size: 25px;
-                line-height: 22px;
-                text-align: right;
-                @media (max-width: $desktop) {
-                    font-size: 22px;
-                    line-height: 21px;
-                }
-                @media (max-width: $desktop-s) {
-                    font-size: 20px;
-                    line-height: 19px;
-                }
-            }
-            .ar-prop {
-                top: 50px;
-                @media (max-width: $desktop-s) {
-                    top: 46px;
-                }
-            }
         }
     }
     @media (max-width: $tablet) {
